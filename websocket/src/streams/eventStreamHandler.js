@@ -1,4 +1,4 @@
-export const eventStreamHandler = async (redis, socket, groupName) => {
+const eventStreamHandler = async (redis, socket, groupName) => {
   const groupExists = await redis.xinfo(
     "GROUPS",
     "event-stream",
@@ -40,3 +40,5 @@ export const eventStreamHandler = async (redis, socket, groupName) => {
     }
   );
 };
+
+module.exports = eventStreamHandler;
