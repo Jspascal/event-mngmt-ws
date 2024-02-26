@@ -1,8 +1,7 @@
 const guestStreamHandler = async (redis, socket, groupName) => {
   const groupExists = await redis.xinfo(
-    "STREAM",
-    "guest-stream",
     "GROUPS",
+    "guest-stream",
     (err, groups) => {
       if (err) {
         console.error("Failed to get stream info");

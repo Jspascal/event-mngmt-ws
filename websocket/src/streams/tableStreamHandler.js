@@ -1,8 +1,7 @@
 const tableStreamHandler = async (redis, socket, groupName) => {
   const groupExists = await redis.xinfo(
-    "STREAM",
-    "table-stream",
     "GROUPS",
+    "table-stream",
     (err, groups) => {
       if (err) {
         console.error("Failed to get stream info");
