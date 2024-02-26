@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import io from 'socket.io-client';
+import * as socket from '@/config/socket';
 
 export default {
   name: 'EventsList',
@@ -50,17 +50,16 @@ export default {
     };
   },
   created() {
-    this.socket = io('http://localhost:3001');
-    this.socket.on('connect', () => {
+    socket.on('connect', () => {
       console.log('connected');
     });
-    this.socket.on('events', (data) => {
+    socket.on('events', (data) => {
       this.events = data;
       this.loading = false;
     });
   },
   beforeUnmount() {
-    this.socket.close();
+    socket.close();
   }
 };
 </script>

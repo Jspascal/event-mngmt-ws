@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import io from 'socket.io-client';
+import * as socket from '@/config/socket';
 
 export default {
   name: 'TablesList',
@@ -40,14 +40,13 @@ export default {
     };
   },
   created() {
-    this.socket = io('http://localhost:3000');
-    this.socket.on('tables', (data) => {
+    socket.on('tables', (data) => {
       this.tables = data.filter((table) => table.eventId === this.eventId);
       this.loading = false;
     });
   },
   beforeUnmount() {
-    this.socket.close();
+    socket.close();
   }
 };
 </script>
