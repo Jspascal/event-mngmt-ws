@@ -1,0 +1,25 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v8.4.1
+    hooks:
+      - id: eslint
+        files: \.js$
+        types: [file]
+      - id: eslint
+        files: \.vue$ # *.vue
+        types: [file]
+        additional_dependencies: ["eslint-plugin-vue"]
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.5.1
+    hooks:
+      - id: prettier
+#  - repo: https://github.com/pre-commit/mirrors-jest
+#    rev: v27.4.3
+#    hooks:
+#      - id: jest
