@@ -1,23 +1,16 @@
 const tableStreamHandler = async (redis, socket, groupName) => {
-  const groupExists = await redis.xinfo(
-    "GROUPS",
+  await redis.xgroup(
+    "CREATE",
     "table-stream",
-    (err, groups) => {
-      if (err) {
-        console.error("Failed to get stream info");
-      }
-
-      return groups.some((group) => group[1] === groupName);
-    }
-  );
-
-  if (!groupExists) {
-    await redis.xgroup("CREATE", "table-stream", groupName, "$", (err) => {
+    groupName,
+    "$",
+    "MKSTREAM",
+    (err) => {
       if (err) {
         console.error("Failed to create group");
       }
-    });
-  }
+    }
+  );
 
   await redis.xreadgroup(
     "GROUP",
