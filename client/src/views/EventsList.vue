@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import * as socket from '@/config/socket';
+import socket from '@/config/socket';
 
 export default {
   name: 'EventsList',

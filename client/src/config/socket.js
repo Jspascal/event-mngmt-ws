@@ -4,4 +4,6 @@ const endpoint = import.meta.env.PROD
   ? 'https://event-mngmt-ws.onrender.com'
   : 'http://localhost:3001';
 
-export default io(endpoint);
+const socket = io(endpoint);
+
+export default socket;
