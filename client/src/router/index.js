@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Events from '../views/Events.vue';
-import Tables from '../views/Tables.vue';
-import Guests from '../views/Guests.vue';
+import EventsList from '@/views/EventsList.vue';
+import TablesList from '@/views/TablesList.vue';
+import GuestsList from '@/views/GuestsList.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,18 +9,18 @@ const router = createRouter({
     {
       path: '/',
       name: 'Events',
-      component: Events
+      component: EventsList
     },
     {
       path: '/tables/:eventId',
       name: 'Tables',
-      component: Tables,
+      component: TablesList,
       props: true
     },
     {
       path: '/guests/:eventId',
       name: 'Guests',
-      component: Guests,
+      component: GuestsList,
       props: true
     }
   ]
