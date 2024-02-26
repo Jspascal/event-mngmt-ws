@@ -1,0 +1,15 @@
+{
+  "name": "event-mngmt-ws",
+  "version": "1.0.0",
+  "description": "testing websocket arch",
+  "main": ".",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph NOMO",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.22.0"
+  }
+}
