@@ -22,12 +22,12 @@
             <td>
               <router-link
                 :to="{ name: 'Tables', params: { eventId: event.id } }"
-                class="btn btn-primary"
+                class="btn btn-primary d-inline-block"
                 >View Tables</router-link
               >
               <router-link
                 :to="{ name: 'Guests', params: { eventId: event.id } }"
-                class="btn btn-secondary"
+                class="btn btn-secondary d-inline-block ml-2"
                 >View Guests</router-link
               >
             </td>
