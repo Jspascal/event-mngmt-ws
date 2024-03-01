@@ -1,5 +1,5 @@
 const eventStreamHandler = async (redis, socket, groupName) => {
-  await redis.xgroup(
+  /*await redis.xgroup(
     "CREATE",
     "table-stream",
     groupName,
@@ -10,7 +10,7 @@ const eventStreamHandler = async (redis, socket, groupName) => {
         console.error("Failed to create group");
       }
     }
-  );
+  );*/
 
   await redis.xreadgroup(
     "GROUP",

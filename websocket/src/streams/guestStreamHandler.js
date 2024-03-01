@@ -1,5 +1,5 @@
 const guestStreamHandler = async (redis, socket, groupName) => {
-  await redis.xgroup(
+  /*await redis.xgroup(
     "CREATE",
     "guest-stream",
     groupName,
@@ -10,7 +10,7 @@ const guestStreamHandler = async (redis, socket, groupName) => {
         console.error("Failed to create group");
       }
     }
-  );
+  );*/
 
   await redis.xreadgroup(
     "GROUP",
